@@ -1,0 +1,149 @@
+{
+  "info": {
+    "_postman_id": "59945f8b-228d-4a24-9ee2-bc08d2d6851f",
+    "name": "day-1",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "50153195",
+    "_collection_link": "https://akash02bn-4967629.postman.co/workspace/7615701e-e545-4b0d-8568-c688321b8cb5/collection/50153195-59945f8b-228d-4a24-9ee2-bc08d2d6851f?action=share&source=collection_link&creator=50153195"
+  },
+  "item": [
+    {
+      "name": "get api call",
+      "id": "c6e0eb8d-d263-4115-bd5b-db8853bb6ed3",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "myrequest-header",
+            "value": "some    value",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "https://api.restful-api.dev/objects/ff8081819782e69e019a95c31fb5121a",
+          "protocol": "https",
+          "host": [
+            "api",
+            "restful-api",
+            "dev"
+          ],
+          "path": [
+            "objects",
+            "ff8081819782e69e019a95c31fb5121a"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "update",
+      "id": "292039be-92ca-4ef5-a25f-1c571a7785fa",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n   \"name\": \"Apple MacBook \",\r\n   \"data\": {\r\n      \"year\": 2020,\r\n      \"price\": 1849.99,\r\n      \"CPU model\": \"Intel Core i9\",\r\n      \"Hard disk size\": \"1 TB\"\r\n   }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://api.restful-api.dev/objects/<id>",
+          "protocol": "https",
+          "host": [
+            "api",
+            "restful-api",
+            "dev"
+          ],
+          "path": [
+            "objects",
+            "<id>"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "add",
+      "id": "55b69e85-78ed-4e32-b689-fd3ea8b6f507",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n   \"name\": \"Apple MacBook \",\r\n   \"data\": {\r\n      \"year\": 2020,\r\n      \"price\": 1849.99,\r\n      \"CPU model\": \"Intel Core i9\",\r\n      \"Hard disk size\": \"1 TB\"\r\n   }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://api.restful-api.dev/objects/ff8081819782e69e019a95c31fb5121a",
+          "protocol": "https",
+          "host": [
+            "api",
+            "restful-api",
+            "dev"
+          ],
+          "path": [
+            "objects",
+            "ff8081819782e69e019a95c31fb5121a"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "delete",
+      "id": "e1f01284-7e4f-4697-abba-499767173d45",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "https://api.restful-api.dev/objects/ff8081819782e69e019a95c31fb5121a",
+          "protocol": "https",
+          "host": [
+            "api",
+            "restful-api",
+            "dev"
+          ],
+          "path": [
+            "objects",
+            "ff8081819782e69e019a95c31fb5121a"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://postman-echo.com/get?var={{my_variable}}",
+      "id": "b81b06d8-4fb5-464a-8479-d933dbd61f50",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://postman-echo.com/get?var={{my_variable}}",
+          "protocol": "https",
+          "host": [
+            "postman-echo",
+            "com"
+          ],
+          "path": [
+            "get"
+          ],
+          "query": [
+            {
+              "key": "var",
+              "value": "{{my_variable}}"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
