@@ -1,0 +1,95 @@
+{
+  "info": {
+    "_postman_id": "1eed421a-3808-4556-9561-422b4fcc41bd",
+    "name": "Dynamic Data",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "New Request",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "const responseXml = pm.response.text();\r",
+              "\r",
+              "const xml2js = require('xml2js');\r",
+              "let jsonData;\r",
+              "\r",
+              "xml2js.parseString(responseXml, {trim: true}, function (err,result){\r",
+              "    if(err){\r",
+              "        console.log('error parsing XML:', err);\r",
+              "        return;\r",
+              "    }\r",
+              "\r",
+              "    jsonData = result;\r",
+              "\r",
+              "    console.log(jsonData);\r",
+              "\r",
+              "    const slideshowTitle = jsonData.slideshow.$.title;\r",
+              "    const slideshowAuthor = jsonData.slideshow.$.author;\r",
+              "    const slideshowAuthor = jsonData.slideshow.$.slide[0].title[0];\r",
+              "    slide\r",
+              "    const slideshowAuthor = jsonData.slideshow.$.slide[1].item;\r",
+              "\r",
+              "    console.log('slideshow Title:', slideshowTitle);\r",
+              "    console.log('slideshow Author:', slideshowAuthor);\r",
+              "    console.log('First Slide Title:', firstSlideTitle);\r",
+              "    console.log('Ithems in Second Slide:', itemInSecondSlide);\r",
+              "\r",
+              "    pm.test(\"Check slideshow title\", function(){\r",
+              "        pm.expect(slideshowTitle).to.eql(\"Sample Slide Show\");  \r",
+              "    });\r",
+              "\r",
+              "    pm.test(\"Check slideshow Author\", function(){\r",
+              "        pm.expect(slideshowTitle).to.eql(\"Yours Truly\");  \r",
+              "    });\r",
+              "\r",
+              "    pm.test(\"Check first slide title\", function(){\r",
+              "        pm.expect(firstSlideTitle).to.eql(\"Sample Slide Show\");  \r",
+              "    });\r",
+              "\r",
+              "\r",
+              "\r",
+              "}"
+            ],
+            "type": "text/javascript"
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\t\"name\":\"{{name}}\",\r\n\t\"city\":\"{{city}}\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://httpbin.org/xml",
+          "protocol": "https",
+          "host": [
+            "httpbin",
+            "org"
+          ],
+          "path": [
+            "xml"
+          ]
+        }
+      }
+    }
+  ]
+}

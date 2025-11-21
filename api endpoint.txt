@@ -1,0 +1,6 @@
+https:api.restful-api.dev/order
+
+https:api.restful-api.dev/account +POST create
+https:api.restful-api.dev/account<id> +PUT update
+https:api.restful-api.dev/account<id> +DELETE DELETE
+https:api.restful-api.dev/account<id> +GET get
